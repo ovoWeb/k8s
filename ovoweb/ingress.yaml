@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ovoweb-ingress
+  labels:
+    app: ovoweb
+  annotations:
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nginx-svc
+              servicePort: 80
